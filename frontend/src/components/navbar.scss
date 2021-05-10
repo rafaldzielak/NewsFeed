@@ -1,0 +1,29 @@
+@import "../scss/colors";
+
+#navbar {
+  width: 100vw !important;
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  box-shadow: 0px -5px 20px $primary;
+  position: sticky;
+  // text-align: left;
+  .container {
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0.2rem;
+    img.logo {
+      max-height: 45px;
+      margin-bottom: 5px;
+    }
+    h1 {
+      color: $primary;
+      padding: 0 1rem;
+      margin: 0rem;
+      font-size: 3rem;
+    }
+  }
+}
