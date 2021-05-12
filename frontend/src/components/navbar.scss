@@ -7,6 +7,8 @@
   border-bottom: 1px solid black;
   box-shadow: 0px -5px 20px $primary;
   position: sticky;
+  top: 0;
+  z-index: 10;
   // text-align: left;
   .container {
     max-width: 1000px;
@@ -14,6 +16,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     padding-top: 0.2rem;
     img.logo {
       max-height: 45px;
@@ -24,6 +27,10 @@
       padding: 0 1rem;
       margin: 0rem;
       font-size: 3rem;
+      transition: 0.3s color;
+      &:hover {
+        color: $secondary;
+      }
     }
   }
 }
