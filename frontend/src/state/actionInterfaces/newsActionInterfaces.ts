@@ -19,7 +19,9 @@ export interface NewsState {
   per_page: number;
   total_pages: number;
   total_hits: number;
+  status: string;
   loading?: boolean;
+  error?: string | null;
 }
 
 interface GetNews {
@@ -31,6 +33,7 @@ interface GetNewsSuccess {
 }
 interface GetNewsError {
   type: NewsActionTypes.GET_NEWS_ERROR;
+  payload: string;
 }
 
 export type NewsAction = GetNews | GetNewsSuccess | GetNewsError;

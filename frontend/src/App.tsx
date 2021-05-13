@@ -13,9 +13,7 @@ function App() {
       <Router>
         <div className='App '>
           <Navbar />
-          <Route path='/'>
-            <MainScreen />
-          </Route>
+          <Route path='/' component={MainScreen} />
         </div>
       </Router>
     </Provider>

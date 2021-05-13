@@ -1,12 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP&family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Teko:wght@500;600&display=swap");
-
-
-
+@import "./scss/fonts.scss";
 .App {
   text-align: center;
-  font-family: "Lato", sans-serif;
+
   font-family: "Teko", sans-serif;
   box-sizing: border-box;
   margin: 0;

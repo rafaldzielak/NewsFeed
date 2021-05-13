@@ -2,6 +2,7 @@ import React from "react";
 import "./important-news.scss";
 import { Article } from "../state/actionInterfaces/newsActionInterfaces";
 import { Link } from "react-router-dom";
+
 interface ImportantNewsItemProps {
   article: Article;
   index: number;

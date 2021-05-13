@@ -9,18 +9,20 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  // text-align: left;
+  box-shadow: 0 12px 10px -10px $primary;
+  margin-bottom: 1.5rem;
   .container {
-    max-width: 1000px;
+    max-width: 1550px;
     height: 100%;
     display: flex;
+    // justify-content: left;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 0.2rem;
     img.logo {
-      max-height: 45px;
-      margin-bottom: 5px;
+      height: 45px;
+      margin-top: 5px;
     }
     h1 {
       color: $primary;
@@ -30,6 +32,23 @@
       transition: 0.3s color;
       &:hover {
         color: $secondary;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #navbar {
+    height: 45px;
+    margin-bottom: 1rem;
+
+    .container {
+      img.logo {
+        height: 40px;
+        margin-bottom: 1rem;
+      }
+      h1 {
+        font-size: 0rem;
       }
     }
   }
