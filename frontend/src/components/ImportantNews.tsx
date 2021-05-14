@@ -1,18 +1,20 @@
-import React, { JSXElementConstructor } from "react";
+import React from "react";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import "./important-news.scss";
 import ImportantNewsItem from "./importantNewsItem";
 import Loader from "./Loader";
 import FadeIn from "react-fade-in";
+import SingleArticleModal from "./SingleArticleModal";
 
 const ImportantNews = () => {
-  const { articles, page, per_page, total_hits, total_pages, loading, error } = useTypedSelector((state) => {
+  const { articles, loading, error } = useTypedSelector((state) => {
     console.log(state.news);
     return state.news;
   });
   console.log(articles);
   return (
     <>
+      {articles && <SingleArticleModal article={articles[0]} index={0} />}
       {loading ? (
         <Loader />
       ) : error ? (
