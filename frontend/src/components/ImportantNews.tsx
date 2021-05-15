@@ -5,16 +5,25 @@ import ImportantNewsItem from "./importantNewsItem";
 import Loader from "./Loader";
 import FadeIn from "react-fade-in";
 import SingleArticleModal from "./SingleArticleModal";
+import { useDispatch } from "react-redux";
+import { openModal, closeModal } from "../state/actions/newsActions";
 
 const ImportantNews = () => {
-  const { articles, loading, error } = useTypedSelector((state) => {
+  const { articles, loading, error, article } = useTypedSelector((state) => {
     console.log(state.news);
     return state.news;
   });
+  const dispatch = useDispatch();
   console.log(articles);
+
+  const closeModalOnSite = () => {
+    dispatch(closeModal());
+  };
   return (
     <>
-      {articles && <SingleArticleModal article={articles[0]} index={0} />}
+      {articles && article && (
+        <SingleArticleModal closeAction={closeModalOnSite} article={article} index={0} />
+      )}
       {loading ? (
         <Loader />
       ) : error ? (

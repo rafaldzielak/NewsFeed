@@ -22,6 +22,7 @@ export interface NewsState {
   status: string;
   loading?: boolean;
   error?: string | null;
+  article?: Article | null;
 }
 
 interface GetNews {
@@ -35,5 +36,12 @@ interface GetNewsError {
   type: NewsActionTypes.GET_NEWS_ERROR;
   payload: string;
 }
+interface OpenModal {
+  type: NewsActionTypes.OPEN_MODAL;
+  payload: Article;
+}
+interface CloseModal {
+  type: NewsActionTypes.CLOSE_MODAL;
+}
 
-export type NewsAction = GetNews | GetNewsSuccess | GetNewsError;
+export type NewsAction = GetNews | GetNewsSuccess | GetNewsError | OpenModal | CloseModal;

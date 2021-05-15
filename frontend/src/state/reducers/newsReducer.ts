@@ -11,16 +11,21 @@ const initialState: NewsState = {
   error: null,
   _id: "",
   status: "",
+  article: null,
 };
 
 const newsReducer = (state: NewsState = initialState, action: NewsAction) => {
   switch (action.type) {
     case NewsActionTypes.GET_NEWS:
-      return { ...(state as NewsState), loading: true, articles: [] };
+      return { ...(state as NewsState), loading: true, articles: [], error: null };
     case NewsActionTypes.GET_NEWS_SUCCESS:
-      return { ...(action.payload as NewsState), loading: false };
+      return { ...(action.payload as NewsState), loading: false, error: null };
     case NewsActionTypes.GET_NEWS_ERROR:
       return { ...(state as NewsState), error: action.payload, loading: false };
+    case NewsActionTypes.OPEN_MODAL:
+      return { ...(state as NewsState), article: action.payload };
+    case NewsActionTypes.CLOSE_MODAL:
+      return { ...(state as NewsState), article: null };
     default:
       return state;
   }

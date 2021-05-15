@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { NewsAction } from "../actionInterfaces/newsActionInterfaces";
+import { Article, NewsAction } from "../actionInterfaces/newsActionInterfaces";
 import { NewsActionTypes } from "../constants";
 import axios, { Method } from "axios";
 import { NewsState } from "../actionInterfaces/newsActionInterfaces";
@@ -29,3 +29,10 @@ export const getNews =
       else dispatch({ type: NewsActionTypes.GET_NEWS_ERROR, payload: error.message });
     }
   };
+
+export const openModal = (article: Article) => async (dispatch: Dispatch<NewsAction>) => {
+  dispatch({ type: NewsActionTypes.OPEN_MODAL, payload: article });
+};
+export const closeModal = () => async (dispatch: Dispatch<NewsAction>) => {
+  dispatch({ type: NewsActionTypes.CLOSE_MODAL });
+};

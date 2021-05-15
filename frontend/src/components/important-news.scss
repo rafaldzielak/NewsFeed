@@ -1,3 +1,4 @@
+@import "../scss/colors.scss";
 #important {
   max-width: 1600px;
   margin: auto;
@@ -74,7 +75,7 @@
 .error {
   font-size: 2.5rem;
   margin-top: 20vh;
-  color: #ed4337;
+  color: $alert;
 }
 
 @media screen and (max-width: 1200px) {

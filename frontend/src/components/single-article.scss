@@ -1,9 +1,9 @@
 @import "../scss/colors.scss";
 @import "../scss/fonts.scss";
 
-#modal {
-  position: grid;
-  position: absolute;
+.modal {
+  overflow-y: scroll;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -14,8 +14,9 @@
 }
 
 article {
+  width: 100%;
   padding: 1rem;
-  margin-top: 20rem;
+  // margin-top: 20rem;
   background: white;
 
   width: 70vw;
@@ -24,16 +25,34 @@ article {
   text-align: justify;
   -webkit-box-shadow: 0px 0px 15px 10px $primary;
   box-shadow: 0px 0px 20px 5px black;
+
+  p.close-modal {
+    margin: 0;
+    padding: 0;
+    text-align: end;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    font-size: 2rem;
+    line-height: 1rem;
+    .icon {
+      cursor: pointer;
+      color: $alert;
+    }
+  }
+
   h1 {
+    margin-top: 0;
     text-align: center;
     font-size: 2.25rem;
   }
   img {
-    max-width: 100%;
+    width: 100%;
     max-height: 50vh;
     object-fit: cover;
   }
-  p {
+  p,
+  footer {
     padding: 1rem 2rem;
   }
   span {
@@ -44,10 +63,66 @@ article {
       font-family: "Lato", sans-serif;
     }
   }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    span {
+      // min-width: 200px;
+      flex-basis: 200px;
+      &:last-of-type {
+        text-align: end;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  article {
+    margin: 5vh auto;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  article {
+    footer {
+      span {
+        flex-basis: 100%;
+        text-align: center !important;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
+  .modal {
+    width: unset;
+  }
   article {
+    p {
+      margin-top: 0;
+    }
+    span {
+      font-size: 1.1rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    padding: 0.5rem;
+    margin: 0vh auto;
     width: 100vw;
+    footer {
+      span {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  p.close-modal {
+    .icon {
+      padding: 0 0.5rem;
+    }
   }
 }
