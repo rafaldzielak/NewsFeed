@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { getNews } from "../state/actions/newsActions";
 import { useDispatch } from "react-redux";
 import ImportantNews from "../components/ImportantNews";

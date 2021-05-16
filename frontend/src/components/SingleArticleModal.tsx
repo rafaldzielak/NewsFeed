@@ -1,5 +1,5 @@
 import "./single-article.scss";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Article } from "../state/actionInterfaces/newsActionInterfaces";
 import OutsideAlerter from "../hooks/OutsideAlerter";
 import FadeIn from "react-fade-in";
@@ -13,7 +13,6 @@ interface SingleArticleModalProps {
 
 const SingleArticleModal: React.FC<SingleArticleModalProps> = ({ article, closeAction }) => {
   const articleRef = useRef<HTMLDivElement>(null);
-  console.log(article);
   return (
     <FadeIn transitionDuration={500} className='modal'>
       {article && (

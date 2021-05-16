@@ -19,8 +19,6 @@ export const getNews =
     };
     try {
       const { data } = await axios.request<NewsState>(options);
-      console.log(data.status);
-
       if (data.status === "ok") dispatch({ type: NewsActionTypes.GET_NEWS_SUCCESS, payload: data });
       else dispatch({ type: NewsActionTypes.GET_NEWS_ERROR, payload: data.status });
     } catch (error) {

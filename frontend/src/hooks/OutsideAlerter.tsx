@@ -9,7 +9,7 @@ function useOutsideAlerter(ref: any, outSideElementClickAction: () => any) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref]);
+  }, [ref, outSideElementClickAction]);
 }
 
 interface OutsideAlerterProps {

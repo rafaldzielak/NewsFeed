@@ -6,15 +6,11 @@ import Loader from "./Loader";
 import FadeIn from "react-fade-in";
 import SingleArticleModal from "./SingleArticleModal";
 import { useDispatch } from "react-redux";
-import { openModal, closeModal } from "../state/actions/newsActions";
+import { closeModal } from "../state/actions/newsActions";
 
 const ImportantNews = () => {
-  const { articles, loading, error, article } = useTypedSelector((state) => {
-    console.log(state.news);
-    return state.news;
-  });
+  const { articles, loading, error, article } = useTypedSelector((state) => state.news);
   const dispatch = useDispatch();
-  console.log(articles);
 
   const closeModalOnSite = () => {
     dispatch(closeModal());
