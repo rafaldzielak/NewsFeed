@@ -16,7 +16,7 @@ const ImportantNewsItem: React.FC<ImportantNewsItemProps> = ({ article, index })
       onClick={() => dispatch(openModal(article))}
       to='/'
       className={"grid-area" + (index === 0 ? " large" : "") + (index === 1 ? " wide" : "")}>
-      <img src={article.media} alt='' />
+      <img src={article.media} alt={article.topic} />
       <span className='title'>{article.title}</span>
     </Link>
   );

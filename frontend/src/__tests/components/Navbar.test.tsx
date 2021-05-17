@@ -1,13 +1,9 @@
-import { render } from "@testing-library/react";
 import Navbar from "../../components/Navbar";
 import { BrowserRouter as Router } from "react-router-dom";
+import { wrapWithRouter, render } from "../utils/renderWithProvider";
 
 test("shows logo with text", () => {
-  const { getByText, getByRole } = render(
-    <Router>
-      <Navbar />
-    </Router>
-  );
+  const { getByText, getByRole } = render(wrapWithRouter(Navbar));
   getByText(/megaphone/i);
   getByRole("img", { name: "logo" });
 });
