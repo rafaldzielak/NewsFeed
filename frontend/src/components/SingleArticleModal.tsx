@@ -18,7 +18,7 @@ const SingleArticleModal: React.FC<SingleArticleModalProps> = ({ article, closeA
       {article && (
         <article ref={articleRef}>
           <p className='close-modal'>
-            <VscChromeClose className='icon' />
+            <VscChromeClose className='icon' title='close-icon' />
           </p>
 
           <OutsideAlerter outSideElementClickAction={closeAction}>
