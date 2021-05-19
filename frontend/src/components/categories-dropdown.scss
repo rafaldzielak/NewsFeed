@@ -1,0 +1,49 @@
+@import "../scss/colors.scss";
+@import "../scss/transitions.scss";
+
+div {
+  position: relative;
+
+  h2 {
+    @include trans();
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: $primary;
+    padding: 0;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    &.active {
+      background-color: $hover;
+    }
+    &:hover {
+      color: $secondary;
+      background-color: $hover;
+    }
+  }
+  .dropdown-content {
+    min-width: 200px;
+    hr {
+      margin: 0;
+      border-width: 1px;
+      border-color: #fefefe50;
+    }
+    border: 1px solid $secondary;
+    padding: 1rem;
+    position: absolute;
+    // bottom: 450;
+    right: 0px;
+    background-color: white;
+    p {
+      cursor: pointer;
+      font-size: 1.4rem;
+      padding: 0.25rem 1rem;
+      margin: 0 0.5rem;
+      background-color: white;
+      @include trans();
+    }
+    p:hover {
+      background-color: $hover;
+      color: $primary;
+    }
+  }
+}

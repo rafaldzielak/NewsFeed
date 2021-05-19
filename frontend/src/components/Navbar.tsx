@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../img/megaphone.svg";
+import CategoriesDropdown from "./CategoriesDropdown";
 import "./navbar.scss";
 import SearchComponent from "./SearchComponent";
+import { categories } from "../mocks/categories";
 
 const Navbar: React.FC = () => {
   return (
@@ -13,6 +15,7 @@ const Navbar: React.FC = () => {
           <h1>MegaPhone</h1>
         </Link>
         <SearchComponent />
+        <CategoriesDropdown categories={categories} />
       </div>
     </nav>
   );
