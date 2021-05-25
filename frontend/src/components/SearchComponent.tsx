@@ -15,9 +15,7 @@ const SearchComponent = () => {
   const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(getNews(keyword));
-    called();
   };
-  const called = () => {};
   return (
     <div className='search'>
       <form onSubmit={searchHandler}>

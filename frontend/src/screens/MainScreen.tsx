@@ -4,12 +4,6 @@ import { useDispatch } from "react-redux";
 import ImportantNews from "../components/ImportantNews";
 
 const MainScreen = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getNews());
-  }, [dispatch]);
-
   return (
     <main>
       <ImportantNews />
