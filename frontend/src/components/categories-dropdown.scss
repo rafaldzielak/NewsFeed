@@ -47,3 +47,25 @@ div {
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  div {
+    position: relative;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div {
+    position: relative;
+
+    h2 {
+      font-size: 1.2rem;
+      padding-left: 0.1rem;
+      padding-right: 0.1rem;
+    }
+  }
+}

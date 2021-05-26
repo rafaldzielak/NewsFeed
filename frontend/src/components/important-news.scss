@@ -2,6 +2,7 @@
 #important {
   max-width: 1600px;
   margin: auto;
+  margin-bottom: 1.5rem;
   display: grid;
   width: 85vw;
   // grid-auto-rows: min-content;
@@ -76,6 +77,12 @@
   font-size: 2.5rem;
   margin-top: 20vh;
   color: $alert;
+}
+
+@media screen and (min-width: 1201px) {
+  .grid-area:last-child {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 1200px) {
