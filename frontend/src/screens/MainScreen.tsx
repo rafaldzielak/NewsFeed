@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { getNews } from "../state/actions/newsActions";
-import { useDispatch } from "react-redux";
+import React from "react";
 import ImportantNews from "../components/ImportantNews";
 
 const MainScreen = () => {

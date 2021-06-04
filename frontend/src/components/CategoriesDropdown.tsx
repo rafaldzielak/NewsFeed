@@ -29,14 +29,14 @@ const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({ categories }) =
       </h2>
       {isOpen && (
         <FadeIn>
-          <div className={`dropdown-content`}>
+          <div className='dropdown-content'>
             <hr />
             {categories?.length &&
               categories.map((category) => (
-                <>
+                <div key={category}>
                   <p onClick={() => chooseCategory(category)}>{category}</p>
                   <hr />
-                </>
+                </div>
               ))}
           </div>
         </FadeIn>
