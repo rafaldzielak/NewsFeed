@@ -9,7 +9,10 @@ import { useDispatch } from "react-redux";
 import { closeModal } from "../state/actions/newsActions";
 
 const ImportantNews = () => {
-  const { articles, loading, error, article } = useTypedSelector((state) => state.news);
+  const { articles, loading, error, article } = useTypedSelector((state) => {
+    // console.log(state);
+    return state.news;
+  });
   const dispatch = useDispatch();
 
   const closeModalOnSite = () => {
