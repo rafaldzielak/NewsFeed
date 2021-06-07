@@ -24,8 +24,15 @@ const SearchComponent = () => {
           placeholder='Search for news'
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
+          minLength={2}
         />
-        <GrSearch className='search-icon' title='search-icon' onClick={() => dispatch(getNews(keyword))} />
+        <GrSearch
+          className='search-icon'
+          title='search-icon'
+          onClick={() => {
+            if (keyword.length >= 2) dispatch(getNews(keyword));
+          }}
+        />
       </form>
     </div>
   );
